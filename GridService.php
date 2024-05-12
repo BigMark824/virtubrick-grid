@@ -18,7 +18,7 @@ class GridService
 	public function __construct(private string $arbiter)
 	{
 		$this->soapClient = new SoapClient(
-			file_get_contents('./Resources/RCCService.wsdl'),
+			dirname(__FILE__) . '/Resources/RCCService.wsdl',
 			[
 				'location' => $this->arbiter
 			]
